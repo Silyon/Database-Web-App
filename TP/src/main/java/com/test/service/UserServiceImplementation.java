@@ -37,14 +37,14 @@ public class UserServiceImplementation implements UserService {
 	
 	@Transactional
 	@Override
-	public void addPlaylistToUser(User user, Playlist playlist) {
-		userDAO.addPlaylistToUser(user, playlist);
+	public void addPlaylistToUser(String email, Playlist playlist) {
+		userDAO.addPlaylistToUser(email, playlist);
 	}
 	
 	@Transactional
 	@Override
-	public void deletePlaylistFromUser(User user, Playlist playlist) {
-		userDAO.deletePlaylistFromUser(user, playlist);
+	public void deletePlaylistFromUser(String email, Playlist playlist) {
+		userDAO.deletePlaylistFromUser(email, playlist);
 	}
 	
 	

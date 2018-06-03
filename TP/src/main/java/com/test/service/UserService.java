@@ -13,8 +13,8 @@ public interface UserService {
 	
 	public boolean addUser (User user);
 	
-	public void addPlaylistToUser(User user, Playlist playlist);
+	public void addPlaylistToUser(String email, Playlist playlist);
 	
-	public void deletePlaylistFromUser(User user, Playlist playlist);
+	public void deletePlaylistFromUser(String email, Playlist playlist);
 	
 }

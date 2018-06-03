@@ -87,11 +87,9 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void addPlaylistToUser(User user, Playlist playlist) {
+	public void addPlaylistToUser(String email, Playlist playlist) {
 		
 		Session session = sessionFactory.getCurrentSession();
-		
-		String email = user.getEmail();
 		
 		User temp = (User)session.createQuery("from User where email = '"+email+"'").getSingleResult();
 		
@@ -103,11 +101,9 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void deletePlaylistFromUser(User user, Playlist playlist) {
+	public void deletePlaylistFromUser(String email, Playlist playlist) {
 		
 		Session session = sessionFactory.getCurrentSession();
-		
-		String email = user.getEmail();
 		
 		User temp = (User)session.createQuery("from User where email = '"+email+"'").getSingleResult();
 		

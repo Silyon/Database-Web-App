@@ -65,18 +65,12 @@ public class RESTController {
 		
 		JSONObject obj = new JSONObject(jstr);
 		
-		User tempUser = new User ();
-		tempUser.setEmail(obj.getString("email"));
-		tempUser.setFirst_name(obj.getString("first_name"));
-		tempUser.setLast_name(obj.getString("last_name"));
-		tempUser.setPassword(obj.getString("password"));
-		tempUser.setUsername(obj.getString("username"));
-		tempUser.setToken(obj.getString("token"));
+		String email = obj.getString("email");
 		
 		Playlist tempPlaylist = new Playlist();
 		tempPlaylist.setLink(obj.getString("link"));
 		
-		userService.addPlaylistToUser(tempUser, tempPlaylist);
+		userService.addPlaylistToUser(email, tempPlaylist);
 		
 		return new ResponseEntity<String>(HttpStatus.OK);
 		
@@ -88,18 +82,12 @@ public class RESTController {
 			
 		JSONObject obj = new JSONObject(jstr);
 			
-		User tempUser = new User ();
-		tempUser.setEmail(obj.getString("email"));
-		tempUser.setFirst_name(obj.getString("first_name"));
-		tempUser.setLast_name(obj.getString("last_name"));
-		tempUser.setPassword(obj.getString("password"));
-		tempUser.setUsername(obj.getString("username"));
-		tempUser.setToken(obj.getString("token"));
+		String email = obj.getString("email");
 			
 		Playlist tempPlaylist = new Playlist();
 		tempPlaylist.setLink(obj.getString("link"));
 			
-		userService.deletePlaylistFromUser(tempUser, tempPlaylist);
+		userService.deletePlaylistFromUser(email, tempPlaylist);
 			
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}
